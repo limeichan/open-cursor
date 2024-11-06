@@ -1,0 +1,50 @@
+{
+    "name": "vscode-openai-helper",
+    "displayName": "VS Code OpenAI Helper",
+    "description": "Ask OpenAI questions about selected code",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.80.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [],
+    "main": "./dist/extension.js",
+    "contributes": {
+        "commands": [{
+            "command": "vscode-openai-helper.askOpenAI",
+            "title": "Ask OpenAI about selected code"
+        }],
+        "keybindings": [{
+            "command": "vscode-openai-helper.askOpenAI",
+            "key": "cmd+k",
+            "mac": "cmd+k",
+            "when": "editorHasSelection"
+        }],
+        "configuration": {
+            "title": "OpenAI Helper",
+            "properties": {
+                "openaiHelper.apiKey": {
+                    "type": "string",
+                    "default": "",
+                    "description": "Your OpenAI API key"
+                }
+            }
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./"
+    },
+    "devDependencies": {
+        "@types/node": "^16.0.0",
+        "@types/vscode": "^1.80.0",
+        "typescript": "^4.9.0"
+    },
+    "dependencies": {
+        "axios": "^1.4.0"
+    }
+}
+
