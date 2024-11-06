@@ -12,16 +12,20 @@
     "activationEvents": [],
     "main": "./dist/extension.js",
     "contributes": {
-        "commands": [{
-            "command": "vscode-openai-helper.askOpenAI",
-            "title": "Ask OpenAI about selected code"
-        }],
-        "keybindings": [{
-            "command": "vscode-openai-helper.askOpenAI",
-            "key": "cmd+k",
-            "mac": "cmd+k",
-            "when": "editorHasSelection"
-        }],
+        "commands": [
+            {
+                "command": "vscode-openai-helper.askOpenAI",
+                "title": "Ask OpenAI about selected code"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "vscode-openai-helper.askOpenAI",
+                "key": "cmd+k",
+                "mac": "cmd+k",
+                "when": "editorHasSelection"
+            }
+        ],
         "configuration": {
             "title": "OpenAI Helper",
             "properties": {
@@ -44,7 +48,6 @@
         "typescript": "^4.9.0"
     },
     "dependencies": {
-        "axios": "^1.4.0"
+        "axios": "^1.7.7"
     }
 }
-
